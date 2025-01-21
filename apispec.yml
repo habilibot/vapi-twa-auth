@@ -1,0 +1,47 @@
+openapi: 3.0.0
+info:
+  title: TWA (Telegram Webapp Auth)
+  version: 1.0.0
+  description: Prefix all endpoints with /twa-auth
+paths:
+  /signIn:
+    post:
+      summary: Sign in
+      tags:
+        - Auth
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                telegramInitData:
+                  type: string
+      responses:
+        '200':
+          description: Signed in
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Session'
+        '401':
+          description: Unauthorized
+components:
+  schemas:
+    TWAUser:
+      type: object
+      properties:
+        id:
+          type: integer
+        authUserId:
+          type: string
+        telegramId:
+          type: integer
+        telegramUsername:
+          type: string
+        tonWalletAddress:
+          type: string
+        isPremium:
+          type: boolean
+          
