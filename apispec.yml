@@ -29,7 +29,7 @@ paths:
           description: Unauthorized
 components:
   schemas:
-    TWAUser:
+    Session:
       type: object
       properties:
         id:
@@ -44,4 +44,5 @@ components:
           type: string
         isPremium:
           type: boolean
-          
+        accessToken:
+          type: string

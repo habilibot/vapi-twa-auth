@@ -1,2 +1,4 @@
 name: twa-auth
 version: "0.1.0"
+schemas:
+  - twa_auth
